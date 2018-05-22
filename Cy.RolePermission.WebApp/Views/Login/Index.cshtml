@@ -1,0 +1,84 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>登录</title>
+    <link href="~/Content/logincss/base.css" rel="stylesheet" />
+    <link href="~/Content/logincss/style.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script>
+        //切换验证码
+        function RefreshValidateCode(obj) {
+            obj.src = "/Login/ShowValidateCode/" + new Date().getMilliseconds();
+        }
+
+        //Ajax成功后调用
+        function AjaxOnSuccess(data) {
+            if (data == "ok") {
+                window.location.href = "/Home/Index";
+                return;
+            }
+            $('#msg').text(data);
+            $("#code").attr("src", "/Login/ShowValidateCode/" + new Date().getMilliseconds());
+        }
+    </script>
+</head>
+<body>
+    <div class="bg"></div>
+    <div class="container">
+        <div class="line bouncein">
+            <div class="xs6 xm4 xs3-move xm4-move">
+                <div style="height:150px;"></div>
+                <div class="media media-y margin-big-bottom">
+                </div>
+                @using (Ajax.BeginForm("Index", "Login", new AjaxOptions
+                {
+                    HttpMethod = "post",
+                    OnSuccess = "AjaxOnSuccess"
+                }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="panel loginbox">
+                        <div class="text-center margin-big padding-big-top">
+                            <h1>后台管理中心</h1>
+                        </div>
+                        <div class="panel-body" style="padding:30px; padding-bottom:10px; padding-top:10px;">
+                            <div class="form-group">
+                                <div class="field field-icon-right">
+                                    <input type="text" class="input input-big" name="UserName" id="username" placeholder="登录账号" autocomplete="off">
+                                    <span class="icon icon-user margin-small"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="field field-icon-right">
+                                    <input type="password" class="input input-big" name="PassWord" id="password" placeholder="登录密码" autocomplete="off">
+                                    <span class="icon icon-key margin-small"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="field">
+                                    <input type="text" class="input input-big" name="ValidateCode" placeholder="填写右侧的验证码" autocomplete="off">
+                                    <img src="/Login/ShowValidateCode" id="code" width="100" height="32" class="passcode" style="height:43px;cursor:pointer;" onclick="RefreshValidateCode(this)" />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="padding:30px 30px 15px 30px;">
+                            <input type="submit" id="button" class="button button-block bg-main text-big input-big" value="登录">
+                        </div>
+                        <div style="padding:0px 0px 20px 30px">
+                            <input type="checkbox" name="RememberMe" value="true" />记住我？
+                            <span style="color:red;" id="msg">@*@Html.ValidationMessage("Error_Login")*@</span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

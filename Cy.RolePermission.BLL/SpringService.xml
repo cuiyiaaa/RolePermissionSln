@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+
+  <!--配置ActionInfoService-->
+  <object name="ActionInfoService" type="Cy.RolePermission.BLL.ActionInfoService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="ActionInfoRepository" />
+  </object>
+
+  <!--配置BooksService-->
+  <object name="BooksService" type="Cy.RolePermission.BLL.BooksService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="BooksRepository" />
+  </object>
+
+  <!--配置keyWordsRankService-->
+  <object name="keyWordsRankService" type="Cy.RolePermission.BLL.keyWordsRankService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="keyWordsRankRepository" />
+  </object>
+
+  <!--配置LogService-->
+  <object name="LogService" type="Cy.RolePermission.BLL.LogService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="LogRepository" />
+  </object>
+
+  <!--配置MenuInfoService-->
+  <object name="MenuInfoService" type="Cy.RolePermission.BLL.MenuInfoService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="MenuInfoRepository" />
+  </object>
+
+  <!--配置R_UserInfo_ActionInfoService-->
+  <object name="R_UserInfo_ActionInfoService" type="Cy.RolePermission.BLL.R_UserInfo_ActionInfoService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="R_UserInfo_ActionInfoRepository" />
+  </object>
+
+  <!--配置RoleInfoService-->
+  <object name="RoleInfoService" type="Cy.RolePermission.BLL.RoleInfoService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="RoleInfoRepository" />
+  </object>
+
+  <!--配置SearchDetailsService-->
+  <object name="SearchDetailsService" type="Cy.RolePermission.BLL.SearchDetailsService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="SearchDetailsRepository" />
+  </object>
+
+  <!--配置UserInfoService-->
+  <object name="UserInfoService" type="Cy.RolePermission.BLL.UserInfoService, Cy.RolePermission.BLL" singleton="false" >
+    <property name="CurrentRepository" ref="UserInfoRepository" />
+  </object>
+</objects>

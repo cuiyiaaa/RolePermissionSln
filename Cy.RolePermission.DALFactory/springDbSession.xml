@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net">
+	<object name="DbSession" type="Cy.RolePermission.DAL.DbSession, DbSession" singleton="false" >
+	
+		<property name="ActionInfoRepository" ref="ActionInfoRepository" />
+	
+		<property name="BooksRepository" ref="BooksRepository" />
+	
+		<property name="keyWordsRankRepository" ref="keyWordsRankRepository" />
+	
+		<property name="LogRepository" ref="LogRepository" />
+	
+		<property name="MenuInfoRepository" ref="MenuInfoRepository" />
+	
+		<property name="R_UserInfo_ActionInfoRepository" ref="R_UserInfo_ActionInfoRepository" />
+	
+		<property name="RoleInfoRepository" ref="RoleInfoRepository" />
+	
+		<property name="SearchDetailsRepository" ref="SearchDetailsRepository" />
+	
+		<property name="UserInfoRepository" ref="UserInfoRepository" />
+	</object>
+</objects>

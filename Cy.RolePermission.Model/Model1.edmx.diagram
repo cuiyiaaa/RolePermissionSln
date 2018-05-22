@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6922236146f64e91b383b5bd5d20def5" Name="Diagram1" ZoomLevel="117" >
+        <EntityTypeShape EntityType="Model1.UserInfo" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="Model1.RoleInfo" Width="1.5" PointX="3.375" PointY="1" />
+        <EntityTypeShape EntityType="Model1.ActionInfo" Width="1.5" PointX="6" PointY="0.5" />
+        <EntityTypeShape EntityType="Model1.R_UserInfo_ActionInfo" Width="1.5" PointX="4.125" PointY="5" />
+        <EntityTypeShape EntityType="Model1.MenuInfo" Width="1.5" PointX="8.375" PointY="2.125" />
+        <EntityTypeShape EntityType="Model1.Books" Width="1.5" PointX="9.125" PointY="9" />
+        <EntityTypeShape EntityType="Model1.keyWordsRank" Width="1.5" PointX="7.125" PointY="9.125" />
+        <EntityTypeShape EntityType="Model1.SearchDetails" Width="1.5" PointX="9.375" PointY="7" />
+        <AssociationConnector Association="Model1.UserInfoRoleInfo" />
+        <AssociationConnector Association="Model1.UserInfoR_UserInfo_ActionInfo" />
+        <AssociationConnector Association="Model1.RoleInfoActionInfo" />
+        <AssociationConnector Association="Model1.ActionInfoR_UserInfo_ActionInfo" />
+        <EntityTypeShape EntityType="Model1.Log" Width="1.5" PointX="0.5" PointY="6.375" />
+        <AssociationConnector Association="Model1.UserInfoLog" />
+        <AssociationConnector Association="Model1.ActionInfoMenuInfo" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
